@@ -1,0 +1,1836 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Dr.h.C. Jonex Almeida | Escritor, Pesquisador e Especialista em Zoroastrianismo</title> 
+     
+    <!-- Meta Tags para SEO --> 
+    <meta name="description" content="Site oficial do Dr.h.C. Jonex Almeida. Autor de 'Brasil: O Berço Esquecido', 'Pérsia em Fogo' e 'Breviário Khorda Avesta'. Pesquisador da filosofia Zoroastriana e administrador das comunidades Zoroastrianas no Brasil."> 
+    <meta name="keywords" content="Jonex Almeida, escritor brasileiro, Zoroastrianismo, filosofia persa, livros Amazon, autor independente, pesquisador religioso, Irmandade Zoroastriana Brasil"> 
+    <meta name="author" content="Dr.h.C. Jonex Almeida"> 
+     
+    <!-- Open Graph para redes sociais --> 
+    <meta property="og:title" content="Dr.h.C. Jonex Almeida - Escritor e Pesquisador"> 
+    <meta property="og:description" content="Autor especializado em Zoroastrianismo e filosofia persa. Livros disponíveis na Amazon Brasil e internacionalmente."> 
+    <meta property="og:type" content="website"> 
+    <meta property="og:image" content="images/autor/hero.jpg"> 
+     
+    <!-- Font Awesome para ícones --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+     
+    <!-- Google Fonts --> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+     
+    <style> 
+        /* ====== VARIÁVEIS E RESET ====== */ 
+        :root { 
+            --primary: #1a3c5e; 
+            --secondary: #d4af37; 
+            --accent: #8b4513; 
+            --light: #f8f9fa; 
+            --dark: #212529; 
+            --gray: #6c757d; 
+            --font-heading: 'Merriweather', serif; 
+            --font-body: 'Open Sans', sans-serif; 
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            --transition: all 0.3s ease; 
+        } 
+         
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        } 
+         
+        html { 
+            scroll-behavior: smooth; 
+        } 
+         
+        body { 
+            font-family: var(--font-body); 
+            color: var(--dark); 
+            line-height: 1.6; 
+            background-color: var(--light); 
+            overflow-x: hidden; 
+        } 
+         
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: var(--font-heading); 
+            font-weight: 700; 
+            line-height: 1.3; 
+            margin-bottom: 1rem; 
+        } 
+         
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+            transition: var(--transition); 
+        } 
+         
+        ul { 
+            list-style: none; 
+        } 
+         
+        img { 
+            max-width: 100%; 
+            height: auto; 
+        } 
+         
+        .container { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        } 
+         
+        section { 
+            padding: 80px 0; 
+        } 
+         
+        .section-title { 
+            text-align: center; 
+            margin-bottom: 50px; 
+            position: relative; 
+        } 
+         
+        .section-title h2 { 
+            font-size: 2.5rem; 
+            color: var(--primary); 
+            display: inline-block; 
+            padding-bottom: 15px; 
+        } 
+         
+        .section-title h2:after { 
+            content: ''; 
+            position: absolute; 
+            width: 80px; 
+            height: 4px; 
+            background-color: var(--secondary); 
+            bottom: 0; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        } 
+         
+        .btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background-color: var(--primary); 
+            color: white; 
+            border-radius: 4px; 
+            font-weight: 600; 
+            border: none; 
+            cursor: pointer; 
+            transition: var(--transition); 
+            text-align: center; 
+        } 
+         
+        .btn:hover { 
+            background-color: #142c47; 
+            transform: translateY(-3px); 
+            box-shadow: var(--shadow); 
+        } 
+         
+        .btn-secondary { 
+            background-color: var(--secondary); 
+            color: var(--dark); 
+        } 
+         
+        .btn-secondary:hover { 
+            background-color: #c29a1f; 
+        } 
+         
+        .btn-accent { 
+            background-color: var(--accent); 
+            color: white; 
+        } 
+         
+        .btn-accent:hover { 
+            background-color: #6d3410; 
+        } 
+         
+        /* ====== MODAL PARA PODCAST ====== */ 
+        .podcast-modal-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.85); 
+            display: none; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 2000; 
+            padding: 20px; 
+        } 
+         
+        .podcast-modal-overlay.active { 
+            display: flex; 
+            animation: fadeIn 0.3s ease; 
+        } 
+         
+        @keyframes fadeIn { 
+            from { opacity: 0; } 
+            to { opacity: 1; } 
+        } 
+         
+        .podcast-modal { 
+            background-color: white; 
+            border-radius: 10px; 
+            max-width: 600px; 
+            width: 100%; 
+            max-height: 90vh; 
+            overflow-y: auto; 
+            position: relative; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+            border: 3px solid var(--secondary); 
+            animation: slideUp 0.5s ease; 
+        } 
+         
+        @keyframes slideUp { 
+            from { transform: translateY(50px); opacity: 0; } 
+            to { transform: translateY(0); opacity: 1; } 
+        } 
+         
+        .podcast-modal-header { 
+            background-color: var(--primary); 
+            color: white; 
+            padding: 20px 30px; 
+            border-radius: 7px 7px 0 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        } 
+         
+        .podcast-modal-header h3 { 
+            color: white; 
+            margin: 0; 
+            font-size: 1.5rem; 
+        } 
+         
+        .close-podcast-modal { 
+            background: none; 
+            border: none; 
+            color: white; 
+            font-size: 1.8rem; 
+            cursor: pointer; 
+            line-height: 1; 
+            transition: transform 0.3s ease; 
+        } 
+         
+        .close-podcast-modal:hover { 
+            transform: rotate(90deg); 
+        } 
+         
+        .podcast-modal-content { 
+            padding: 30px; 
+            text-align: center; 
+        } 
+         
+        .podcast-cover { 
+            max-width: 300px; 
+            width: 100%; 
+            border-radius: 8px; 
+            margin: 0 auto 25px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        } 
+         
+        /* ====== POPUP ROTATIVO DE LIVROS ====== */ 
+        .book-popup-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.85); 
+            display: none; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1000; 
+            padding: 20px; 
+        } 
+         
+        .book-popup-overlay.active { 
+            display: flex; 
+            animation: fadeIn 0.3s ease; 
+        } 
+         
+        .book-popup { 
+            background-color: white; 
+            border-radius: 10px; 
+            max-width: 900px; 
+            width: 100%; 
+            max-height: 90vh; 
+            overflow-y: auto; 
+            position: relative; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+            border: 3px solid var(--secondary); 
+            animation: slideUp 0.5s ease; 
+        } 
+         
+        .popup-header { 
+            background-color: var(--primary); 
+            color: white; 
+            padding: 20px 30px; 
+            border-radius: 7px 7px 0 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        } 
+         
+        .popup-header h3 { 
+            color: white; 
+            margin: 0; 
+            font-size: 1.5rem; 
+        } 
+         
+        .close-popup { 
+            background: none; 
+            border: none; 
+            color: white; 
+            font-size: 1.8rem; 
+            cursor: pointer; 
+            line-height: 1; 
+            transition: transform 0.3s ease; 
+        } 
+         
+        .close-popup:hover { 
+            transform: rotate(90deg); 
+        } 
+         
+        .popup-content { 
+            padding: 30px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 30px; 
+        } 
+         
+        @media (min-width: 768px) { 
+            .popup-content { 
+                flex-direction: row; 
+            } 
+        } 
+         
+        .popup-book-cover { 
+            flex: 1; 
+            text-align: center; 
+        } 
+         
+        .popup-book-cover img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 5px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            border: 1px solid #ddd; 
+        } 
+         
+        .popup-book-info { 
+            flex: 2; 
+        } 
+         
+        .popup-book-info h2 { 
+            color: var(--primary); 
+            font-size: 1.8rem; 
+            margin-bottom: 15px; 
+        } 
+         
+        .book-meta { 
+            display: flex; 
+            gap: 10px; 
+            margin-bottom: 20px; 
+            flex-wrap: wrap; 
+        } 
+         
+        .book-tag { 
+            background-color: var(--secondary); 
+            color: var(--dark); 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+        } 
+         
+        .review-content { 
+            margin: 20px 0; 
+            padding: 20px; 
+            background-color: #f8f9fa; 
+            border-radius: 5px; 
+            border-left: 4px solid var(--secondary); 
+        } 
+         
+        .review-content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+        } 
+         
+        .popup-actions { 
+            display: flex; 
+            gap: 15px; 
+            margin-top: 25px; 
+            flex-wrap: wrap; 
+        } 
+         
+        .popup-footer { 
+            margin-top: 20px; 
+            padding-top: 15px; 
+            border-top: 1px solid #eee; 
+            font-size: 0.9rem; 
+            color: var(--gray); 
+            text-align: center; 
+        } 
+         
+        /* ====== HEADER COM LOGO E REDES SOCIAIS ====== */ 
+        header { 
+            background-color: white; 
+            box-shadow: var(--shadow); 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 100; 
+        } 
+         
+        .header-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
+        } 
+         
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        } 
+         
+        .logo-img { 
+            height: 60px; 
+            width: auto; 
+            max-width: 200px; 
+        } 
+         
+        .logo-text h1 { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin: 0; 
+        } 
+         
+        .logo-text span { 
+            color: var(--gray); 
+            font-size: 0.8rem; 
+        } 
+         
+        .nav-social-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 25px; 
+        } 
+         
+        .nav-menu ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 25px; 
+        } 
+         
+        .nav-menu a { 
+            font-weight: 600; 
+            padding: 5px 0; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        } 
+         
+        .nav-menu a:hover { 
+            color: var(--primary); 
+        } 
+         
+        .nav-menu a:after { 
+            content: ''; 
+            position: absolute; 
+            width: 0; 
+            height: 2px; 
+            background-color: var(--secondary); 
+            bottom: 0; 
+            left: 0; 
+            transition: var(--transition); 
+        } 
+         
+        .nav-menu a:hover:after { 
+            width: 100%; 
+        } 
+         
+        .social-icons-header { 
+            display: flex; 
+            gap: 10px; 
+        } 
+         
+        .social-icons-header a { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 40px; 
+            height: 40px; 
+            background-color: var(--light); 
+            border-radius: 50%; 
+            color: var(--primary); 
+            transition: var(--transition); 
+            font-size: 1.1rem; 
+        } 
+         
+        .social-icons-header a:hover { 
+            transform: translateY(-3px); 
+        } 
+         
+        /* Ícones coloridos específicos */ 
+        .social-icons-header .fa-instagram { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+            color: white; 
+        } 
+         
+        .social-icons-header .fa-instagram:hover { 
+            box-shadow: 0 5px 15px rgba(214, 36, 159, 0.3); 
+        } 
+         
+        .social-icons-header .fa-facebook { 
+            background-color: #1877F2; 
+            color: white; 
+        } 
+         
+        .social-icons-header .fa-facebook:hover { 
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3); 
+        } 
+         
+        .social-icons-header .fa-youtube { 
+            background-color: #FF0000; 
+            color: white; 
+        } 
+         
+        .social-icons-header .fa-youtube:hover { 
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3); 
+        } 
+         
+        .social-icons-header .fa-podcast { 
+            background-color: #8b4513; 
+            color: white; 
+        } 
+         
+        .social-icons-header .fa-podcast:hover { 
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3); 
+        } 
+         
+        .social-icons-header .fa-amazon { 
+            background-color: #FF9900; 
+            color: white; 
+        } 
+         
+        .social-icons-header .fa-amazon:hover { 
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3); 
+        } 
+         
+        .mobile-menu-btn { 
+            display: none; 
+            background: none; 
+            border: none; 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            cursor: pointer; 
+        } 
+         
+        /* ====== HERO SECTION ====== */ 
+        .hero { 
+            background: linear-gradient(rgba(26, 60, 94, 0.85), rgba(26, 60, 94, 0.85)), url('images/autor/hero.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+            padding: 150px 0 100px; 
+            margin-top: 80px; 
+        } 
+         
+        .hero h1 { 
+            font-size: 3rem; 
+            margin-bottom: 20px; 
+            color: white; 
+        } 
+         
+        .hero p { 
+            font-size: 1.2rem; 
+            margin-bottom: 30px; 
+            opacity: 0.9; 
+            max-width: 800px; 
+        } 
+         
+        .cta-buttons { 
+            display: flex; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        } 
+         
+        /* ====== SOBRE SECTION ====== */ 
+        .about-content { 
+            display: flex; 
+            gap: 50px; 
+            align-items: center; 
+        } 
+         
+        .author-photo { 
+            flex: 1; 
+            text-align: center; 
+        } 
+         
+        .author-photo img { 
+            border-radius: 10px; 
+            box-shadow: var(--shadow); 
+            max-width: 400px; 
+            width: 100%; 
+        } 
+         
+        .author-bio { 
+            flex: 2; 
+        } 
+         
+        .highlight-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            margin-bottom: 25px; 
+        } 
+         
+        .highlight-icon { 
+            width: 50px; 
+            height: 50px; 
+            background-color: var(--primary); 
+            color: white; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.2rem; 
+        } 
+         
+        /* ====== LIVROS SECTION ====== */ 
+        .books-filter { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            margin-bottom: 40px; 
+            flex-wrap: wrap; 
+        } 
+         
+        .filter-btn { 
+            padding: 8px 20px; 
+            background-color: white; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            transition: var(--transition); 
+        } 
+         
+        .filter-btn.active, .filter-btn:hover { 
+            background-color: var(--primary); 
+            color: white; 
+            border-color: var(--primary); 
+        } 
+         
+        .books-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 30px; 
+        } 
+         
+        .book-card { 
+            background-color: white; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow); 
+            transition: var(--transition); 
+        } 
+         
+        .book-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+        } 
+         
+        .book-image { 
+            height: 300px; 
+            background-color: #eee; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+        } 
+         
+        .book-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        } 
+         
+        .book-info { 
+            padding: 20px; 
+        } 
+         
+        .book-info h3 { 
+            font-size: 1.2rem; 
+            margin-bottom: 10px; 
+            min-height: 60px; 
+        } 
+         
+        .book-price { 
+            color: var(--primary); 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            margin-bottom: 15px; 
+        } 
+         
+        /* ====== LOJA SECTION ====== */ 
+        .store-intro { 
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 50px; 
+        } 
+         
+        .amazon-badge { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            background-color: #232f3e; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            margin-bottom: 30px; 
+        } 
+         
+        /* ====== REDES SOCIAIS SECTION ====== */ 
+        .social-section { 
+            background-color: var(--primary); 
+            color: white; 
+        } 
+         
+        .social-section .section-title h2 { 
+            color: white; 
+        } 
+         
+        .social-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-top: 40px; 
+        } 
+         
+        .social-card { 
+            background-color: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+            padding: 30px; 
+            text-align: center; 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            transition: var(--transition); 
+        } 
+         
+        .social-card:hover { 
+            transform: translateY(-10px); 
+            background-color: rgba(255, 255, 255, 0.15); 
+        } 
+         
+        .social-icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 20px; 
+        } 
+         
+        .social-card h3 { 
+            color: white; 
+            margin-bottom: 15px; 
+            font-size: 1.4rem; 
+        } 
+         
+        .social-card p { 
+            opacity: 0.9; 
+            margin-bottom: 20px; 
+            min-height: 80px; 
+        } 
+         
+        /* ====== PODCASTS SECTION ====== */ 
+        .podcasts-section { 
+            background-color: #f8f9fa; 
+        } 
+         
+        /* ====== CONTATO SECTION ====== */ 
+        .contact-info { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            margin-top: 20px; 
+        } 
+         
+        .contact-item { 
+            flex: 1; 
+            min-width: 250px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 15px; 
+            background-color: #f9f9f9; 
+            border-radius: 8px; 
+        } 
+         
+        .contact-icon { 
+            width: 50px; 
+            height: 50px; 
+            background-color: var(--primary); 
+            color: white; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.3rem; 
+        } 
+         
+        /* ====== FOOTER ====== */ 
+        footer { 
+            background-color: #0f2438; 
+            color: white; 
+            padding: 70px 0 30px; 
+        } 
+         
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 40px; 
+            margin-bottom: 50px; 
+        } 
+         
+        .footer-column h3 { 
+            color: var(--secondary); 
+            margin-bottom: 25px; 
+            font-size: 1.3rem; 
+        } 
+         
+        .social-links-footer { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            margin-top: 20px; 
+        } 
+         
+        .social-links-footer a { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 45px; 
+            height: 45px; 
+            background-color: rgba(255,255,255,0.1); 
+            border-radius: 50%; 
+            color: white; 
+            transition: var(--transition); 
+            font-size: 1.2rem; 
+        } 
+         
+        .social-links-footer a:hover { 
+            background-color: var(--secondary); 
+            color: var(--dark); 
+            transform: translateY(-3px); 
+        } 
+         
+        .copyright { 
+            text-align: center; 
+            padding-top: 30px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            color: rgba(255, 255, 255, 0.7); 
+            font-size: 0.9rem; 
+        } 
+         
+        /* ====== RESPONSIVIDADE ====== */ 
+        @media (max-width: 992px) { 
+            .hero-container, .about-content { 
+                flex-direction: column; 
+            } 
+             
+            .hero { 
+                padding: 120px 0 80px; 
+            } 
+             
+            .hero h1 { 
+                font-size: 2.5rem; 
+            } 
+             
+            .section-title h2 { 
+                font-size: 2rem; 
+            } 
+        } 
+         
+        @media (max-width: 768px) { 
+            .mobile-menu-btn { 
+                display: block; 
+            } 
+             
+            .nav-social-container { 
+                position: fixed; 
+                top: 80px; 
+                left: 0; 
+                width: 100%; 
+                background-color: white; 
+                padding: 20px; 
+                box-shadow: var(--shadow); 
+                flex-direction: column; 
+                transform: translateY(-100%); 
+                opacity: 0; 
+                transition: var(--transition); 
+                visibility: hidden; 
+            } 
+             
+            .nav-social-container.active { 
+                transform: translateY(0); 
+                opacity: 1; 
+                visibility: visible; 
+            } 
+             
+            .nav-menu ul { 
+                flex-direction: column; 
+                gap: 15px; 
+                margin-bottom: 20px; 
+            } 
+             
+            .social-icons-header { 
+                justify-content: center; 
+            } 
+             
+            .hero { 
+                padding: 100px 0 60px; 
+                margin-top: 60px; 
+            } 
+             
+            .hero h1 { 
+                font-size: 2.2rem; 
+            } 
+             
+            .section-title h2 { 
+                font-size: 1.8rem; 
+            } 
+             
+            .popup-content { 
+                flex-direction: column; 
+            } 
+        } 
+         
+        @media (max-width: 576px) { 
+            .hero h1 { 
+                font-size: 2rem; 
+            } 
+             
+            .section-title h2 { 
+                font-size: 1.6rem; 
+            } 
+             
+            .cta-buttons { 
+                flex-direction: column; 
+                align-items: flex-start; 
+            } 
+             
+            .popup-actions { 
+                flex-direction: column; 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+    <!-- Modal para Podcast Epifania & Fantasia --> 
+    <div class="podcast-modal-overlay" id="podcastModal"> 
+        <div class="podcast-modal"> 
+            <div class="podcast-modal-header"> 
+                <h3><i class="fas fa-podcast"></i> Epifania & Fantasia</h3> 
+                <button class="close-podcast-modal" id="closePodcastModal">&times;</button> 
+            </div> 
+            <div class="podcast-modal-content"> 
+                <img src="images/podcast/epifania-fantasia.jpg"  
+                     alt="Capa do Podcast Epifania & Fantasia"  
+                     class="podcast-cover" 
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"300\"><rect width=\"100%\" height=\"100%\" fill=\"%231a3c5e\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"20\" fill=\"white\" text-anchor=\"middle\" dominant-baseline=\"middle\">Epifania & Fantasia</text></svg>'"> 
+                 
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Epifania & Fantasia</h2> 
+                 
+                <div style="text-align: left; margin-bottom: 30px;"> 
+                    <p><strong>Aguarde novos episódios especiais e o lançamento oficial em 2026!</strong></p> 
+                     
+                    <p>Este podcast está sendo cuidadosamente preparado para os amantes de contos históricos e resenhas poéticas. Uma jornada sonora através de narrativas que misturam história, fantasia e momentos de epifania literária.</p> 
+                     
+                    <p>Seja um apoiador antecipado deste projeto único que promete trazer uma nova perspectiva sobre narrativas históricas e fantásticas, com momentos de revelação e descoberta.</p> 
+                     
+                    <p style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; border-left: 4px solid var(--secondary);"> 
+                        <strong>Pré-lançamento 2026:</strong> Contos históricos, análises literárias e momentos de epifania para ouvintes exigentes. 
+                    </p> 
+                </div> 
+                 
+                <button class="btn btn-accent" id="closePodcastBtn"> 
+                    Voltar ao Site 
+                </button> 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <!-- Popup Rotativo de Livros --> 
+    <div class="book-popup-overlay" id="bookPopup"> 
+        <div class="book-popup"> 
+            <div class="popup-header"> 
+                <h3><i class="fas fa-crown"></i> <span id="popupHeaderText">ÚLTIMO LANÇAMENTO</span></h3> 
+                <button class="close-popup" id="closePopup">&times;</button> 
+            </div> 
+            <div class="popup-content"> 
+                <div class="popup-book-cover"> 
+                    <img src="" alt="Capa do livro" id="popupBookImage"> 
+                </div> 
+                <div class="popup-book-info"> 
+                    <h2 id="popupBookTitle">Título do Livro</h2> 
+                     
+                    <div class="book-meta" id="popupBookMeta"> 
+                        <!-- Tags inseridas via JavaScript --> 
+                    </div> 
+                     
+                    <div class="review-content" id="popupBookReview"> 
+                        <!-- Resenha inserida via JavaScript --> 
+                    </div> 
+                     
+                    <div class="popup-actions"> 
+                        <a href="#" target="_blank" class="btn btn-amazon" id="popupAmazonLink"> 
+                            <i class="fab fa-amazon"></i> Comprar na Amazon 
+                        </a> 
+                        <button class="btn btn-secondary" id="closeAndViewBooks"> 
+                            Ver Todos os Livros 
+                        </button> 
+                    </div> 
+                     
+                    <div class="popup-footer" id="popupFooter"> 
+                        <!-- Footer inserido via JavaScript --> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <!-- Header --> 
+    <header> 
+        <div class="container header-container"> 
+            <div class="logo-container"> 
+                <img src="images/autor/logo.png"  
+                     alt="Logo Jonex Almeida"  
+                     class="logo-img" 
+                     onerror="this.style.display='none'; document.getElementById('textLogo').style.display='block';"> 
+                 
+                <div class="logo-text" id="textLogo"> 
+                    <h1>JONEX ALMEIDA</h1> 
+                    <span>Dr.h.C. | Escritor e Pesquisador</span> 
+                </div> 
+            </div> 
+             
+            <div class="nav-social-container" id="navSocialContainer"> 
+                <nav class="nav-menu"> 
+                    <ul> 
+                        <li><a href="#home"><i class="fas fa-home"></i> Início</a></li> 
+                        <li><a href="#about"><i class="fas fa-user"></i> Sobre</a></li> 
+                        <li><a href="#books"><i class="fas fa-book"></i> Livros</a></li> 
+                        <li><a href="#social"><i class="fas fa-hashtag"></i> Redes Sociais</a></li> 
+                        <li><a href="#podcast"><i class="fas fa-podcast"></i> Podcasts</a></li> 
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li> 
+                    </ul> 
+                </nav> 
+                 
+                <div class="social-icons-header"> 
+                    <a href="https://instagram.com/jonexalmeidaoficial" target="_blank" title="Instagram Pessoal"> 
+                        <i class="fab fa-instagram"></i> 
+                    </a> 
+                    <a href="https://instagram.com/irmandadezoroastrianabrasil" target="_blank" title="Instagram da Comunidade"> 
+                        <i class="fab fa-instagram"></i> 
+                    </a> 
+                    <a href="https://www.facebook.com/JonexAlmeidaOficial" target="_blank" title="Facebook Pessoal"> 
+                        <i class="fab fa-facebook-f"></i> 
+                    </a> 
+                    <a href="https://www.facebook.com/IrmandadeZoroastrianaBrasil" target="_blank" title="Facebook da Comunidade"> 
+                        <i class="fab fa-facebook-f"></i> 
+                    </a> 
+                    <a href="https://youtube.com/@jonexalmeida" target="_blank" title="YouTube"> 
+                        <i class="fab fa-youtube"></i> 
+                    </a> 
+                    <a href="https://amazon.com/author/jonexalmeidaoficial" target="_blank" title="Amazon Author Page"> 
+                        <i class="fab fa-amazon"></i> 
+                    </a> 
+                </div> 
+            </div> 
+             
+            <button class="mobile-menu-btn" id="mobileMenuBtn"> 
+                <i class="fas fa-bars"></i> 
+            </button> 
+        </div> 
+    </header> 
+ 
+    <!-- Hero Section --> 
+    <section class="hero" id="home"> 
+        <div class="container"> 
+            <h1>Dr.h.C. Jonex Almeida</h1> 
+            <p>Escritor independente, pesquisador da filosofia Zoroastriana e administrador de comunidades sobre a antiga religião persa. Com obras disponíveis na Amazon e uma presença ativa nas redes sociais.</p> 
+            <div class="cta-buttons"> 
+                <a href="#books" class="btn btn-secondary">Ver Livros</a> 
+                <button class="btn btn-accent" id="showLatestBookBtn"> 
+                    <i class="fas fa-crown"></i> Último Lançamento 
+                </button> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Sobre Section --> 
+    <section id="about"> 
+        <div class="container"> 
+            <div class="section-title"> 
+                <h2>Sobre o Autor</h2> 
+            </div> 
+             
+            <div class="about-content"> 
+                <div class="author-photo"> 
+                    <img src="images/autor/perfil.jpg"  
+                         alt="Dr.h.C. Jonex Almeida"> 
+                </div> 
+                <div class="author-bio"> 
+                    <p>Jonex Almeida é um escritor independente brasileiro, reconhecido com o título honorífico de Doutor Honoris Causa (Dr.h.C.). Sua trajetória literária é marcada por uma produção diversificada, com obras disponíveis através da Amazon.</p> 
+                     
+                    <p>Além de sua carreira como escritor, Jonex dedica-se ao estudo e pesquisa da religião Zoroastriana, uma das mais antigas filosofias espirituais do mundo, originária da Pérsia antiga. Como administrador de comunidades online, gerencia grupos como a "Irmandade Zoroastriana Brasil" no Facebook, com mais de 1.500 membros, e no Instagram, com mais de 1.000 seguidores.</p> 
+                     
+                    <p>Sua abordagem combina a disseminação do conhecimento literário com a promoção de discussões filosóficas e espirituais, criando um espaço de diálogo entre leitores e interessados nas tradições orientais.</p> 
+                     
+                    <div style="margin-top: 40px;"> 
+                        <h3 style="color: var(--primary);">Destaques da Carreira:</h3> 
+                        <div class="highlight-item"> 
+                            <div class="highlight-icon"> 
+                                <i class="fas fa-book"></i> 
+                            </div> 
+                            <div> 
+                                <h4>Autor Independente</h4> 
+                                <p>Publicações disponíveis na Amazon globalmente</p> 
+                            </div> 
+                        </div> 
+                         
+                        <div class="highlight-item"> 
+                            <div class="highlight-icon"> 
+                                <i class="fas fa-search"></i> 
+                            </div> 
+                            <div> 
+                                <h4>Pesquisador Zoroastriano</h4> 
+                                <p>Estudo especializado em filosofia persa antiga</p> 
+                            </div> 
+                        </div> 
+                         
+                        <div class="highlight-item"> 
+                            <div class="highlight-icon"> 
+                                <i class="fas fa-users"></i> 
+                            </div> 
+                            <div> 
+                                <h4>Administrador de Comunidades</h4> 
+                                <p>+1.500 membros em comunidades Zoroastrianas</p> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Livros Section --> 
+    <section id="books" class="books"> 
+        <div class="container"> 
+            <div class="section-title"> 
+                <h2>Livros Publicados</h2> 
+            </div> 
+             
+            <div class="books-filter"> 
+                <button class="filter-btn active" data-filter="all">Todos</button> 
+                <button class="filter-btn" data-filter="zoroastrianismo">Zoroastrianismo</button> 
+                <button class="filter-btn" data-filter="filosofia">Filosofia</button> 
+                <button class="filter-btn" data-filter="historia">História</button> 
+            </div> 
+             
+            <div class="books-grid" id="booksGrid"> 
+                <!-- Livros serão carregados via JavaScript --> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Loja Section --> 
+    <section id="store" class="store"> 
+        <div class="container"> 
+            <div class="section-title"> 
+                <h2>Loja Oficial - Amazon</h2> 
+            </div> 
+             
+            <div class="store-intro"> 
+                <div class="amazon-badge"> 
+                    <i class="fab fa-amazon"></i> 
+                    <span>Disponível na Amazon Global</span> 
+                </div> 
+                <p>Todos os livros do Dr.h.C. Jonex Almeida estão disponíveis na Amazon globalmente. Clique em qualquer livro para ser redirecionado para a página de compra correspondente na Amazon.</p> 
+                <p><strong>Entrega disponível para:</strong> Brasil, Estados Unidos, Portugal, Espanha, Reino Unido e outros países.</p> 
+            </div> 
+             
+            <div class="books-grid" id="storeGrid"> 
+                <!-- Livros da loja serão carregados via JavaScript --> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Redes Sociais Section --> 
+    <section id="social" class="social-section"> 
+        <div class="container"> 
+            <div class="section-title"> 
+                <h2>Redes Sociais</h2> 
+                <p style="color: rgba(255,255,255,0.8);">Conecte-se comigo e com as comunidades</p> 
+            </div> 
+             
+            <div class="social-grid"> 
+                <div class="social-card"> 
+                    <div class="social-icon"> 
+                        <i class="fab fa-instagram"></i> 
+                    </div> 
+                    <h3>Instagram Pessoal</h3> 
+                    <p>Perfil oficial do autor com atualizações sobre livros e pensamentos</p> 
+                    <a href="https://instagram.com/jonexalmeidaoficial" target="_blank" class="btn" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);"> 
+                        <i class="fab fa-instagram"></i> @jonexalmeidaoficial 
+                    </a> 
+                </div> 
+                 
+                <div class="social-card"> 
+                    <div class="social-icon"> 
+                        <i class="fab fa-instagram"></i> 
+                    </div> 
+                    <h3>Instagram da Comunidade</h3> 
+                    <p>Comunidade Zoroastriana Brasil com mais de 1.000 seguidores</p> 
+                    <a href="https://instagram.com/irmandadezoroastrianabrasil" target="_blank" class="btn" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);"> 
+                        <i class="fab fa-instagram"></i> @irmandadezoroastrianabrasil 
+                    </a> 
+                </div> 
+                 
+                <div class="social-card"> 
+                    <div class="social-icon"> 
+                        <i class="fab fa-facebook"></i> 
+                    </div> 
+                    <h3>Facebook Pessoal</h3> 
+                    <p>Página oficial do autor no Facebook</p> 
+                    <a href="https://www.facebook.com/JonexAlmeidaOficial" target="_blank" class="btn" style="background-color: #1877F2;"> 
+                        <i class="fab fa-facebook-f"></i> Jonex Almeida Oficial 
+                    </a> 
+                </div> 
+                 
+                <div class="social-card"> 
+                    <div class="social-icon"> 
+                        <i class="fab fa-facebook"></i> 
+                    </div> 
+                    <h3>Facebook da Comunidade</h3> 
+                    <p>Página e grupo da Irmandade Zoroastriana Brasil</p> 
+                    <div style="display: flex; flex-direction: column; gap: 10px;"> 
+                        <a href="https://www.facebook.com/IrmandadeZoroastrianaBrasil" target="_blank" class="btn" style="background-color: #1877F2; font-size: 0.9rem;"> 
+                            <i class="fab fa-facebook-f"></i> Página Oficial 
+                        </a> 
+                        <a href="https://www.facebook.com/groups/irmandadezoroastrianabrasil" target="_blank" class="btn" style="background-color: #1877F2; font-size: 0.9rem;"> 
+                            <i class="fab fa-facebook-f"></i> Grupo (1500+ membros) 
+                        </a> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Podcasts Section --> 
+    <section id="podcast" class="podcasts-section"> 
+        <div class="container"> 
+            <div class="section-title"> 
+                <h2>Podcasts</h2> 
+                <p>Conteúdo em áudio sobre Zoroastrianismo, epifanias literárias e fantasia</p> 
+            </div> 
+             
+            <div class="social-grid"> 
+                <div class="social-card" style="background-color: white; color: var(--dark);"> 
+                    <div class="social-icon"> 
+                        <i class="fas fa-podcast"></i> 
+                    </div> 
+                    <h3 style="color: var(--primary);">Irmandade Zoroastriana Brasil</h3> 
+                    <p>Podcast oficial da comunidade com discussões sobre filosofia Zoroastriana e cultura persa</p> 
+                    <a href="https://open.spotify.com/show/1Bvt0ZMPdx6AXd62zvql4A?si=F8WFTRexRxiD4LUzq0-0Xw"  
+                       target="_blank" class="btn" style="background-color: #1DB954; color: white;"> 
+                        <i class="fab fa-spotify"></i> Ouvir no Spotify 
+                    </a> 
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);"> 
+                        <i class="fas fa-headphones"></i> Episódios disponíveis 
+                    </p> 
+                </div> 
+                 
+                <div class="social-card" style="background-color: white; color: var(--dark);"> 
+                    <div class="social-icon"> 
+                        <i class="fas fa-podcast"></i> 
+                    </div> 
+                    <h3 style="color: var(--primary);">Epifania & Fantasia</h3> 
+                    <p>Contos históricos, momentos de epifania literária e narrativas fantásticas</p> 
+                    <button class="btn btn-accent" id="showPodcastModalBtn"> 
+                        <i class="fas fa-podcast"></i> Em Breve - 2026 
+                    </button> 
+                    <div style="margin-top: 15px; padding: 10px; background-color: #f8f9fa; border-radius: 5px; border-left: 3px solid var(--secondary);"> 
+                        <p style="font-size: 0.9rem; margin: 0; color: var(--dark);"> 
+                            <i class="fas fa-clock"></i> Pré-lançamento 2026 
+                        </p> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Contato Section --> 
+    <section id="contact"> 
+        <div class="container"> 
+            <div class="section-title"> 
+                <h2>Contato</h2> 
+            </div> 
+             
+            <div class="contact-info"> 
+                <div class="contact-item"> 
+                    <div class="contact-icon"> 
+                        <i class="fas fa-envelope"></i> 
+                    </div> 
+                    <div> 
+                        <h3>E-mail</h3> 
+                        <p>jonex@outlook.com.br</p> 
+                        <small>Para assuntos profissionais e editoriais</small> 
+                    </div> 
+                </div> 
+                 
+                <div class="contact-item"> 
+                    <div class="contact-icon"> 
+                        <i class="fas fa-phone"></i> 
+                    </div> 
+                    <div> 
+                        <h3>Telefone/WhatsApp</h3> 
+                        <p>+55 49 99920-3106</p> 
+                        <small>Para contato direto (Brasil)</small> 
+                    </div> 
+                </div> 
+                 
+                <div class="contact-item"> 
+                    <div class="contact-icon"> 
+                        <i class="fas fa-map-marker-alt"></i> 
+                    </div> 
+                    <div> 
+                        <h3>Localização</h3> 
+                        <p>Brasil</p> 
+                        <small>Autor disponível para eventos internacionais</small> 
+                    </div> 
+                </div> 
+            </div> 
+             
+            <div style="text-align: center; margin-top: 50px;"> 
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Comunidades Zoroastrianas</h3> 
+                <p>Participe das comunidades que administro:</p> 
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px;"> 
+                    <a href="https://facebook.com/groups/irmandadezoroastrianabrasil"  
+                       target="_blank" class="btn" style="background-color: #1877F2;"> 
+                        <i class="fab fa-facebook"></i> Grupo Facebook (1500+ membros) 
+                    </a> 
+                    <a href="https://instagram.com/irmandadezoroastrianabrasil"  
+                       target="_blank" class="btn" style="background: linear-gradient(45deg, #405DE6, #833AB4);"> 
+                        <i class="fab fa-instagram"></i> @irmandadezoroastrianabrasil 
+                    </a> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <!-- Footer --> 
+    <footer> 
+        <div class="container"> 
+            <div class="footer-content"> 
+                <div> 
+                    <h3>Dr.h.C. Jonex Almeida</h3> 
+                    <p>Escritor independente e pesquisador da filosofia Zoroastriana. Publicações disponíveis na Amazon Brasil e internacionalmente.</p> 
+                     
+                    <div class="social-links-footer"> 
+                        <a href="https://instagram.com/jonexalmeidaoficial" target="_blank" title="Instagram Pessoal"> 
+                            <i class="fab fa-instagram"></i> 
+                        </a> 
+                        <a href="https://instagram.com/irmandadezoroastrianabrasil" target="_blank" title="Instagram da Comunidade"> 
+                            <i class="fab fa-instagram"></i> 
+                        </a> 
+                        <a href="https://www.facebook.com/JonexAlmeidaOficial" target="_blank" title="Facebook Pessoal"> 
+                            <i class="fab fa-facebook-f"></i> 
+                        </a> 
+                        <a href="https://www.facebook.com/IrmandadeZoroastrianaBrasil" target="_blank" title="Facebook da Comunidade"> 
+                            <i class="fab fa-facebook-f"></i> 
+                        </a> 
+                        <a href="https://youtube.com/@jonexalmeida" target="_blank" title="YouTube"> 
+                            <i class="fab fa-youtube"></i> 
+                        </a> 
+                        <a href="https://open.spotify.com/show/1Bvt0ZMPdx6AXd62zvql4A" target="_blank" title="Podcast Zoroastrianismo"> 
+                            <i class="fas fa-podcast"></i> 
+                        </a> 
+                        <a href="https://amazon.com/author/jonexalmeidaoficial" target="_blank" title="Amazon Author Page"> 
+                            <i class="fab fa-amazon"></i> 
+                        </a> 
+                    </div> 
+                </div> 
+                 
+                <div> 
+                    <h3>Links Rápidos</h3> 
+                    <ul> 
+                        <li><a href="#home" style="color: white;">Início</a></li> 
+                        <li><a href="#about" style="color: white;">Sobre o Autor</a></li> 
+                        <li><a href="#books" style="color: white;">Livros</a></li> 
+                        <li><a href="#social" style="color: white;">Redes Sociais</a></li> 
+                        <li><a href="#podcast" style="color: white;">Podcasts</a></li> 
+                        <li><a href="#contact" style="color: white;">Contato</a></li> 
+                    </ul> 
+                </div> 
+                 
+                <div> 
+                    <h3>Página do Autor</h3> 
+                    <p>Visite minha página oficial na Amazon para ver todos os livros:</p> 
+                    <a href="https://amazon.com/author/jonexalmeidaoficial"  
+                       target="_blank" class="btn" style="background-color: #ff9900; margin-top: 10px; display: inline-block;"> 
+                        <i class="fab fa-amazon"></i> Amazon Author Page 
+                    </a> 
+                    <p style="margin-top: 15px; font-size: 0.9rem;"> 
+                        <i class="fas fa-globe-americas"></i> Disponível globalmente 
+                    </p> 
+                </div> 
+            </div> 
+             
+            <div class="copyright"> 
+                <p>&copy; 2023 Dr.h.C. Jonex Almeida. Todos os direitos reservados.</p> 
+                <p style="margin-top: 10px;">Site desenvolvido para divulgação das obras do autor no Brasil e internacionalmente.</p> 
+            </div> 
+        </div> 
+    </footer> 
+ 
+    <script> 
+        // ============================================== 
+        // DADOS DOS LIVROS 
+        // ============================================== 
+        const booksData = [ 
+            { 
+                id: 1, 
+                title: "Persia in Fire (EN)", 
+                description: "Análise dos elementos fundamentais da cultura e filosofia persa. Edição em inglês.", 
+                amazonLink: "https://www.amazon.com/Persia-Fire-Analysis-Elements-Coletanea-ebook/dp/B0F99P2NFR/ref=mp_s_a_1_1?crid=3GF2L4K6V3HP&dib=eyJ2IjoiMSJ9.sx_UDFyJ23ytRkPpiOecMA.zXC0OSGy9SW3eCFtlixIC9fGMd_mdDHea-UigCyNK8k&dib_tag=se&keywords=jonex%2Balmeida&qid=1768139951&sprefix=jonex%2BAlmeida%2B%2Caps%2C943&sr=8-1&th=1&psc=1", 
+                image: "images/livros/persia-in-fire.jpg", 
+                formats: ["Digital (Kindle)"], 
+                language: "Inglês", 
+                tags: ["INGLÊS", "FILOSOFIA", "CULTURA PERSA"], 
+                category: "filosofia", 
+                reviews: { 
+                    portuguese: ` 
+                        <p><strong>Resenha em Português:</strong> "Persia in Fire" é uma obra essencial para quem deseja compreender as raízes da civilização persa. Através de uma análise profunda dos elementos culturais, filosóficos e religiosos, o autor desvenda as complexidades de uma das civilizações mais influentes da história.</p> 
+                        <p>Esta edição em inglês torna acessível ao público internacional um conteúdo que normalmente está restrito a pesquisadores acadêmicos. A abordagem é ao mesmo tempo erudita e acessível, perfeita para estudantes e entusiastas da cultura persa.</p> 
+                    `, 
+                    english: ` 
+                        <p><strong>Review in English:</strong> "Persia in Fire" is an essential work for anyone seeking to understand the roots of Persian civilization. Through a deep analysis of cultural, philosophical, and religious elements, the author unravels the complexities of one of history's most influential civilizations.</p> 
+                        <p>This English edition makes accessible to an international audience content that is typically restricted to academic researchers. The approach is both scholarly and accessible, perfect for students and enthusiasts of Persian culture.</p> 
+                    ` 
+                } 
+            }, 
+            { 
+                id: 2, 
+                title: "Brasil, o berço esquecido", 
+                description: "Uma investigação sobre as origens esquecidas do Brasil e suas conexões com culturas antigas.", 
+                amazonLink: "https://www.amazon.com.br/gp/aw/d/B0FY5D4SG8/ref=tmm_pap_swatch_0?ie=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.szGzlnU0WwcLB3kErIv0VCYLSF1_3vBPgtaelMPszqo.OBRPVUVRdfawjwAlD-u_1aW4dVmSv_VnZ-_-t6swRjY&qid=1768140932&sr=8-1", 
+                image: "images/livros/brasil-berco-esquecido.jpg", 
+                formats: ["Digital (Kindle)", "Impresso"], 
+                language: "Português", 
+                tags: ["PORTUGUÊS", "HISTÓRIA", "BRASIL", "LANÇAMENTO"], 
+                category: "historia", 
+                isLatest: true, 
+                reviews: { 
+                    portuguese: ` 
+                        <p><strong>Resenha em Português:</strong> "Brasil, o berço esquecido" é uma obra revolucionária que desafia as narrativas convencionais sobre as origens do Brasil. O autor conduz o leitor por uma jornada através de evidências históricas, arqueológicas e culturais que sugerem conexões profundas entre o Brasil antigo e civilizações perdidas.</p> 
+                        <p>Esta investigação meticulosa revela como elementos culturais e espirituais de civilizações antigas podem ter influenciado a formação do que hoje conhecemos como Brasil. Uma leitura essencial para quem deseja compreender as raízes mais profundas da identidade brasileira.</p> 
+                        <p>Como meu trabalho mais recente, este livro representa anos de pesquisa e reflexão sobre as origens esquecidas da nossa terra.</p> 
+                    `, 
+                    english: ` 
+                        <p><strong>Review in English:</strong> "Brazil, the Forgotten Cradle" is a revolutionary work that challenges conventional narratives about Brazil's origins. The author takes the reader on a journey through historical, archaeological, and cultural evidence suggesting deep connections between ancient Brazil and lost civilizations.</p> 
+                        <p>This meticulous investigation reveals how cultural and spiritual elements from ancient civilizations may have influenced the formation of what we now know as Brazil. Essential reading for anyone seeking to understand the deepest roots of Brazilian identity.</p> 
+                        <p>As my most recent work, this book represents years of research and reflection on the forgotten origins of our land.</p> 
+                    ` 
+                } 
+            }, 
+            { 
+                id: 3, 
+                title: "Pérsia em Fogo", 
+                description: "Versão em português da análise dos elementos da cultura persa. Edição ampliada e revisada.", 
+                amazonLink: "https://www.amazon.com.br/gp/aw/d/B0F88BT5YP/ref=tmm_pap_swatch_0?ie=UTF8&dib_tag=AUTHOR&dib=eyJ2IjoiMSJ9.9AJwA2A4rtZXPSRK-RogaFD-o8U3PMEGIe9jzeqTZCc5eGfCYFPLjE9AimF4M8qk.zExGwP7bN1s8Q5Rsb9Qk36cpDFonvI3CrtufDQ4fs_s", 
+                image: "images/livros/persia-em-fogo.jpg", 
+                formats: ["Digital (Kindle)", "Impresso"], 
+                language: "Português", 
+                tags: ["PORTUGUÊS", "FILOSOFIA", "CULTURA PERSA"], 
+                category: "filosofia", 
+                reviews: { 
+                    portuguese: ` 
+                        <p><strong>Resenha em Português:</strong> "Pérsia em Fogo" é a versão em português da aclamada análise sobre a civilização persa. Esta edição ampliada e revisada inclui novos capítulos e aprofunda temas como a influência do Zoroastrianismo na formação do pensamento ocidental.</p> 
+                        <p>O livro explora como os valores e conceitos desenvolvidos na Pérsia antiga continuam a ressoar no mundo contemporâneo, especialmente em áreas como filosofia, ética e organização social.</p> 
+                        <p>Uma obra fundamental para leitores de língua portuguesa interessados em desvendar os mistérios e contribuições da civilização persa para a humanidade.</p> 
+                    `, 
+                    english: ` 
+                        <p><strong>Review in English:</strong> "Persia in Flames" is the Portuguese version of the acclaimed analysis of Persian civilization. This expanded and revised edition includes new chapters and deepens themes such as the influence of Zoroastrianism on the formation of Western thought.</p> 
+                        <p>The book explores how the values and concepts developed in ancient Persia continue to resonate in the contemporary world, especially in areas such as philosophy, ethics, and social organization.</p> 
+                        <p>A fundamental work for Portuguese-speaking readers interested in unraveling the mysteries and contributions of Persian civilization to humanity.</p> 
+                    ` 
+                } 
+            }, 
+            { 
+                id: 4, 
+                title: "Breviário Khorda Avesta", 
+                description: "Seleção comentada dos textos sagrados do Zoroastrianismo. Uma introdução à filosofia persa antiga.", 
+                amazonLink: "https://www.amazon.com.br/gp/aw/d/B0CDYTVTTG/ref=tmm_pap_swatch_0", 
+                image: "images/livros/breviario-khorda-avesta.jpg", 
+                formats: ["Digital (Kindle)", "Impresso"], 
+                language: "Português", 
+                tags: ["PORTUGUÊS", "ZOROASTRIANISMO", "TEXTOS SAGRADOS"], 
+                category: "zoroastrianismo", 
+                reviews: { 
+                    portuguese: ` 
+                        <p><strong>Resenha em Português:</strong> O "Breviário Khorda Avesta" é uma introdução acessível aos textos sagrados do Zoroastrianismo, uma das mais antigas religiões monoteístas do mundo. Esta seleção comentada permite ao leitor contemporâneo compreender os princípios éticos e filosóficos que guiaram a civilização persa por milênios.</p> 
+                        <p>Como pesquisador dedicado ao estudo do Zoroastrianismo, apresento nesta obra não apenas uma tradução, mas uma interpretação contextualizada que revela a profundidade espiritual destes textos milenares.</p> 
+                        <p>Este livro é especialmente valioso para membros das comunidades Zoroastrianas que administro, servindo como material de estudo e reflexão.</p> 
+                    `, 
+                    english: ` 
+                        <p><strong>Review in English:</strong> The "Khorda Avesta Breviary" is an accessible introduction to the sacred texts of Zoroastrianism, one of the world's oldest monotheistic religions. This annotated selection allows contemporary readers to understand the ethical and philosophical principles that guided Persian civilization for millennia.</p> 
+                        <p>As a researcher dedicated to the study of Zoroastrianism, I present in this work not just a translation, but a contextualized interpretation that reveals the spiritual depth of these ancient texts.</p> 
+                        <p>This book is especially valuable for members of the Zoroastrian communities I administer, serving as study and reflection material.</p> 
+                    ` 
+                } 
+            } 
+        ]; 
+ 
+        // ============================================== 
+        // ELEMENTOS DO DOM 
+        // ============================================== 
+        const bookPopup = document.getElementById('bookPopup'); 
+        const closePopup = document.getElementById('closePopup'); 
+        const showLatestBookBtn = document.getElementById('showLatestBookBtn'); 
+        const closeAndViewBooks = document.getElementById('closeAndViewBooks'); 
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn'); 
+        const navSocialContainer = document.getElementById('navSocialContainer'); 
+        const booksGrid = document.getElementById('booksGrid'); 
+        const storeGrid = document.getElementById('storeGrid'); 
+        const filterBtns = document.querySelectorAll('.filter-btn'); 
+         
+        // Modal do podcast 
+        const podcastModal = document.getElementById('podcastModal'); 
+        const showPodcastModalBtn = document.getElementById('showPodcastModalBtn'); 
+        const closePodcastModal = document.getElementById('closePodcastModal'); 
+        const closePodcastBtn = document.getElementById('closePodcastBtn'); 
+ 
+        // ============================================== 
+        // DETECÇÃO DE LOCALIZAÇÃO 
+        // ============================================== 
+        let userCountry = 'BR'; 
+         
+        async function detectUserCountry() { 
+            try { 
+                const response = await fetch('https://ipapi.co/json/'); 
+                const data = await response.json(); 
+                userCountry = data.country_code; 
+                return userCountry; 
+            } catch (error) { 
+                console.log('Usando localização padrão: Brasil'); 
+                return 'BR'; 
+            } 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÃO PARA SELECIONAR LIVRO PARA POPUP 
+        // ============================================== 
+        function getBookForPopup() { 
+            const portugueseSpeakingCountries = ['BR', 'PT', 'AO', 'MZ', 'CV', 'GW', 'TL', 'ST']; 
+             
+            if (portugueseSpeakingCountries.includes(userCountry)) { 
+                return booksData.find(book => book.isLatest) || booksData[1]; 
+            } else { 
+                return booksData.find(book => book.language === "Inglês") || booksData[0]; 
+            } 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÃO PARA CRIAR FALLBACK SVG 
+        // ============================================== 
+        function createBookFallbackSVG(title) { 
+            const words = title.split(' '); 
+            const firstWord = words[0] || ''; 
+            const restWords = words.slice(1).join(' ') || ''; 
+             
+            return ` 
+                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="400"> 
+                    <rect width="100%" height="100%" fill="#1a3c5e"/> 
+                    <rect x="10" y="10" width="280" height="380" rx="5" fill="#2c5a8a"/> 
+                    <text x="150" y="150" font-family="Arial" font-size="24" fill="white" text-anchor="middle">${firstWord}</text> 
+                    <text x="150" y="180" font-family="Arial" font-size="16" fill="white" text-anchor="middle">${restWords}</text> 
+                    <text x="150" y="250" font-family="Arial" font-size="14" fill="#d4af37" text-anchor="middle">Jonex Almeida</text> 
+                </svg> 
+            `; 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÃO PARA RENDERIZAR LIVROS 
+        // ============================================== 
+        function renderBooks(filter = 'all') { 
+            booksGrid.innerHTML = ''; 
+             
+            const filteredBooks = filter === 'all'  
+                ? booksData  
+                : booksData.filter(book => book.category === filter); 
+             
+            filteredBooks.forEach(book => { 
+                const fallbackSVG = createBookFallbackSVG(book.title); 
+                 
+                const bookCard = document.createElement('div'); 
+                bookCard.className = 'book-card'; 
+                bookCard.innerHTML = ` 
+                    ${book.isLatest ? '<div style="position: absolute; top: 10px; left: 10px; background-color: #d4af37; color: #000; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; z-index: 2;">NOVO</div>' : ''} 
+                    <div class="book-image"> 
+                        <img src="${book.image}"  
+                             alt="Capa do livro ${book.title}" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,${encodeURIComponent(fallbackSVG)}'"> 
+                    </div> 
+                    <div class="book-info"> 
+                        <h3>${book.title}</h3> 
+                        <p>${book.description}</p> 
+                        <p class="book-price">${book.formats.includes('Impresso') ? 'A partir de R$ 29,90' : 'R$ 9,90'}</p> 
+                        <a href="${book.amazonLink}" target="_blank" class="btn btn-amazon" style="width: 100%;"> 
+                            <i class="fab fa-amazon"></i> Comprar na Amazon 
+                        </a> 
+                    </div> 
+                `; 
+                booksGrid.appendChild(bookCard); 
+            }); 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÃO PARA RENDERIZAR LOJA 
+        // ============================================== 
+        function renderStoreBooks() { 
+            if (!storeGrid) return; 
+             
+            storeGrid.innerHTML = ''; 
+             
+            booksData.forEach(book => { 
+                const fallbackSVG = createBookFallbackSVG(book.title); 
+                 
+                const bookCard = document.createElement('div'); 
+                bookCard.className = 'book-card'; 
+                bookCard.innerHTML = ` 
+                    ${book.isLatest ? '<div style="position: absolute; top: 10px; left: 10px; background-color: #d4af37; color: #000; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; z-index: 2;">LANÇAMENTO</div>' : ''} 
+                    <div class="book-image"> 
+                        <img src="${book.image}"  
+                             alt="Capa do livro ${book.title}" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,${encodeURIComponent(fallbackSVG)}'"> 
+                    </div> 
+                    <div class="book-info"> 
+                        <h3>${book.title}</h3> 
+                        <p>${book.description}</p> 
+                        <p class="book-price">${book.formats.includes('Impresso') ? 'A partir de R$ 29,90' : 'R$ 9,90'}</p> 
+                        <a href="${book.amazonLink}" target="_blank" class="btn btn-amazon" style="width: 100%;"> 
+                            <i class="fab fa-amazon"></i> Comprar Agora na Amazon 
+                        </a> 
+                        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--gray);"> 
+                            <i class="fas fa-shipping-fast"></i> Entrega disponível para todo Brasil 
+                        </p> 
+                    </div> 
+                `; 
+                storeGrid.appendChild(bookCard); 
+            }); 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÃO PARA MOSTRAR POPUP DE LIVRO 
+        // ============================================== 
+        async function showBookPopup() { 
+            await detectUserCountry(); 
+            const selectedBook = getBookForPopup(); 
+            const reviewLanguage = selectedBook.language === "Inglês" ? "english" : "portuguese"; 
+             
+            document.getElementById('popupHeaderText').textContent =  
+                selectedBook.isLatest ? 'ÚLTIMO LANÇAMENTO' : 'DESTAQUE INTERNACIONAL'; 
+             
+            document.getElementById('popupBookTitle').textContent = selectedBook.title; 
+             
+            const metaContainer = document.getElementById('popupBookMeta'); 
+            metaContainer.innerHTML = selectedBook.tags.map(tag =>  
+                `<span class="book-tag">${tag}</span>` 
+            ).join(''); 
+             
+            const reviewContainer = document.getElementById('popupBookReview'); 
+            reviewContainer.innerHTML = selectedBook.reviews[reviewLanguage]; 
+             
+            document.getElementById('popupAmazonLink').href = selectedBook.amazonLink; 
+             
+            const footerContainer = document.getElementById('popupFooter'); 
+            if (selectedBook.language === "Inglês") { 
+                footerContainer.innerHTML = `Recomendado para leitores internacionais | Disponível globalmente na Amazon`; 
+            } else { 
+                footerContainer.innerHTML = `Recomendado para leitores de língua portuguesa | Disponível no Brasil e Portugal`; 
+            } 
+             
+            const popupImg = document.getElementById('popupBookImage'); 
+            popupImg.src = selectedBook.image; 
+            popupImg.alt = `Capa do livro: ${selectedBook.title}`; 
+            popupImg.onerror = function() { 
+                this.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(createBookFallbackSVG(selectedBook.title)); 
+            }; 
+             
+            bookPopup.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÃO PARA FECHAR POPUP DE LIVRO 
+        // ============================================== 
+        function closeBookPopup() { 
+            bookPopup.classList.remove('active'); 
+            document.body.style.overflow = 'auto'; 
+        } 
+ 
+        // ============================================== 
+        // FUNÇÕES PARA MODAL DE PODCAST 
+        // ============================================== 
+        function showPodcastModal() { 
+            podcastModal.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; 
+        } 
+ 
+        function closePodcastModalFunc() { 
+            podcastModal.classList.remove('active'); 
+            document.body.style.overflow = 'auto'; 
+        } 
+ 
+        // ============================================== 
+        // EVENT LISTENERS 
+        // ============================================== 
+        document.addEventListener('DOMContentLoaded', async function() { 
+            await detectUserCountry(); 
+            renderBooks(); 
+            renderStoreBooks(); 
+             
+            // Menu mobile 
+            mobileMenuBtn.addEventListener('click', function() { 
+                navSocialContainer.classList.toggle('active'); 
+            }); 
+             
+            // Fechar menu ao clicar em link 
+            document.querySelectorAll('.nav-menu a').forEach(link => { 
+                link.addEventListener('click', function() { 
+                    if (window.innerWidth <= 768) { 
+                        navSocialContainer.classList.remove('active'); 
+                    } 
+                }); 
+            }); 
+             
+            // Popup de livro 
+            showLatestBookBtn.addEventListener('click', showBookPopup); 
+            closePopup.addEventListener('click', closeBookPopup); 
+             
+            bookPopup.addEventListener('click', function(e) { 
+                if (e.target === bookPopup) { 
+                    closeBookPopup(); 
+                } 
+            }); 
+             
+            document.addEventListener('keydown', function(e) { 
+                if (e.key === 'Escape' && bookPopup.classList.contains('active')) { 
+                    closeBookPopup(); 
+                } 
+            }); 
+             
+            // Botão "Ver Todos os Livros" no popup 
+            closeAndViewBooks.addEventListener('click', function() { 
+                closeBookPopup(); 
+                setTimeout(() => { 
+                    document.querySelector('#books').scrollIntoView({ behavior: 'smooth' }); 
+                }, 300); 
+            }); 
+             
+            // Modal de podcast 
+            showPodcastModalBtn.addEventListener('click', showPodcastModal); 
+            closePodcastModal.addEventListener('click', closePodcastModalFunc); 
+            closePodcastBtn.addEventListener('click', closePodcastModalFunc); 
+             
+            podcastModal.addEventListener('click', function(e) { 
+                if (e.target === podcastModal) { 
+                    closePodcastModalFunc(); 
+                } 
+            }); 
+             
+            document.addEventListener('keydown', function(e) { 
+                if (e.key === 'Escape' && podcastModal.classList.contains('active')) { 
+                    closePodcastModalFunc(); 
+                } 
+            }); 
+             
+            // Filtro de livros 
+            filterBtns.forEach(btn => { 
+                btn.addEventListener('click', function() { 
+                    filterBtns.forEach(b => b.classList.remove('active')); 
+                    this.classList.add('active'); 
+                    const filter = this.getAttribute('data-filter'); 
+                    renderBooks(filter); 
+                }); 
+            }); 
+             
+            // Smooth scrolling 
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+                anchor.addEventListener('click', function(e) { 
+                    e.preventDefault(); 
+                     
+                    const targetId = this.getAttribute('href'); 
+                    if (targetId === '#') return; 
+                     
+                    const targetElement = document.querySelector(targetId); 
+                    if (targetElement) { 
+                        const headerHeight = document.querySelector('header').offsetHeight; 
+                        window.scrollTo({ 
+                            top: targetElement.offsetTop - headerHeight, 
+                            behavior: 'smooth' 
+                        }); 
+                    } 
+                }); 
+            }); 
+             
+            // Mostrar popup automaticamente após 2 segundos 
+            setTimeout(() => { 
+                const hasSeenPopup = localStorage.getItem('hasSeenBookPopup'); 
+                if (!hasSeenPopup) { 
+                    showBookPopup(); 
+                    localStorage.setItem('hasSeenBookPopup', 'true'); 
+                } 
+            }, 2000); 
+        }); 
+ 
+        // ============================================== 
+        // MENSAGEM DE LOG 
+        // ============================================== 
+        console.log(` 
+        ============================================ 
+        SITE DO DR.H.C. JONEX ALMEIDA 
+        ============================================ 
+         
+        Estrutura de pastas necessária: 
+         
+        seu-site/ 
+        ├── index.html (este arquivo) 
+        └── images/ 
+            ├── autor/ 
+            │   ├── logo.png 
+            │   ├── perfil.jpg 
+            │   └── hero.jpg 
+            ├── livros/ 
+            │   ├── persia-in-fire.jpg 
+            │   ├── brasil-berco-esquecido.jpg 
+            │   ├── persia-em-fogo.jpg 
+            │   └── breviario-khorda-avesta.jpg 
+            └── podcast/ 
+                ├── epifania-fantasia.jpg 
+                └── irmandade-zoroastriana.jpg 
+         
+        O site está pronto para uso! 
+        ============================================ 
+        `); 
+    </script> 
+</body> 
+</html> 
